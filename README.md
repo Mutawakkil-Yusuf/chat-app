@@ -102,6 +102,9 @@ into Vercel, set the two `VITE_SUPABASE_*` environment variables, and deploy. Th
 included GitHub Actions workflow (`.github/workflows/ci.yml`) runs lint,
 type-check, tests, and a build on every push and pull request.
 
+See [`docs/DEPLOY.md`](docs/DEPLOY.md) for the full manual walkthrough (history
+purge, migrations, auth providers, Vercel, and key rotation).
+
 ## Project structure
 
 ```
