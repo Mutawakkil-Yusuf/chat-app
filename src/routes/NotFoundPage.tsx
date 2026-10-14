@@ -7,7 +7,7 @@ export function NotFoundPage() {
       <p className="text-6xl font-bold tracking-tight">404</p>
       <p className="text-muted-foreground">This page does not exist.</p>
       <Button asChild>
-        <Link to="/">Back to chat</Link>
+        <Link to="/">Back home</Link>
       </Button>
     </div>
   )

@@ -42,7 +42,7 @@ export function ChatPage() {
   }
 
   return (
-    <div className="flex h-svh overflow-hidden">
+    <div className="app-shell flex h-svh overflow-hidden">
       <aside
         className={cn(
           'w-full shrink-0 md:flex md:w-80 lg:w-96',

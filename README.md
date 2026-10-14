@@ -1,14 +1,15 @@
-# Chat App
+# Ripple
 
-A modern realtime chat application — direct messages and group conversations with
-presence, typing indicators, reactions, read receipts, message editing, replies,
-search, and dark mode.
+**Conversations that flow.** A modern realtime chat application — direct messages
+and group conversations with presence, typing indicators, reactions, read receipts,
+message editing, replies, search, and dark mode.
 
 Built with **Vite + React 19 + TypeScript + Tailwind CSS v4 + shadcn/ui**, backed by
 **Supabase** (Postgres + Realtime + Auth), and deployable to **Vercel**.
 
 ## Features
 
+- Public marketing site (landing, features, about) with light/dark theme
 - Email magic-link and Google sign-in (Supabase Auth)
 - Direct and group conversations
 - Realtime message delivery (Postgres changes)
@@ -19,7 +20,19 @@ Built with **Vite + React 19 + TypeScript + Tailwind CSS v4 + shadcn/ui**, backe
 - Edit, delete, and reply to messages
 - Conversation and message search
 - Light / dark / system theme
-- Responsive layout and accessible components
+- Responsive, installable web app (PWA manifest) with safe-area and mobile polish
+- Accessible components
+
+## Routes
+
+| Path         | Description                                  |
+| ------------ | -------------------------------------------- |
+| `/`          | Landing page (public)                        |
+| `/features`  | Feature overview (public)                    |
+| `/about`     | About the project (public)                   |
+| `/login`     | Sign-in (Google or email magic link)         |
+| `/chats`     | The chat app (requires authentication)       |
+
 
 ## Tech stack
 
@@ -116,12 +129,13 @@ purge, migrations, auth providers, Vercel, and key rotation).
 
 ```
 src/
-  components/    UI components (chat, profile, theme, ui)
+  components/    UI components (brand, chat, landing, profile, theme, ui)
   hooks/         Data and realtime hooks
   lib/           Supabase client, helpers, query keys
   providers/     Auth and app providers
   routes/        Page-level components
   types/         Database and domain types
+public/          Brand icons and PWA manifest
 supabase/
   migrations/    SQL migrations
 ```

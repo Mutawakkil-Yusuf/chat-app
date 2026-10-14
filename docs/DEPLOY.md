@@ -1,6 +1,6 @@
 # Deployment
 
-This document covers the manual steps required to take Chat App live. The app
+This document covers the manual steps required to take Ripple live. The app
 code and CI are ready; the steps below need a Supabase account, a GitHub push
 (with credentials), and a Vercel account.
 
@@ -51,7 +51,10 @@ In Dashboard → Authentication:
 
 - **URL configuration**
   - Site URL: your production URL (e.g. `https://your-app.vercel.app`).
-  - Redirect URLs: add `http://localhost:5173/**` and your production URL.
+  - Redirect URLs: add `http://localhost:5173/**` and your production URL. The app
+    sends users to `/chats` after sign-in, so make sure the wildcard/pattern
+    covers it (e.g. `https://your-app.vercel.app/**`). The public routes `/`,
+    `/features`, and `/about` need no special configuration.
 - **Email** — magic-link sign-in is enabled by default; no extra setup.
 - **Google** — enable the provider and paste a Google OAuth Client ID/Secret.
   See the Supabase Google login guide for the authorized redirect URI to add in

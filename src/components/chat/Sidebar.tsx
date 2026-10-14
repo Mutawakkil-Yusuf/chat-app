@@ -1,12 +1,5 @@
 import { useState } from 'react'
-import {
-  Loader2,
-  LogOut,
-  MessageCircle,
-  Search,
-  SquarePen,
-  UserRound,
-} from 'lucide-react'
+import { Loader2, LogOut, Search, SquarePen, UserRound } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import {
   DropdownMenu,
@@ -20,6 +13,7 @@ import { Input } from '@/components/ui/input'
 import { ScrollArea } from '@/components/ui/scroll-area'
 import { UserAvatar } from '@/components/UserAvatar'
 import { ThemeToggle } from '@/components/theme/ThemeToggle'
+import { Logo } from '@/components/brand/Logo'
 import { ConversationList } from './ConversationList'
 import { useMessageSearch } from '@/hooks/useSearch'
 import { formatListTime } from '@/lib/format'
@@ -57,10 +51,7 @@ export function Sidebar({
   return (
     <div className="flex h-full w-full flex-col border-r bg-background">
       <div className="flex h-16 shrink-0 items-center gap-2 px-3">
-        <div className="flex size-8 items-center justify-center rounded-xl bg-primary text-primary-foreground">
-          <MessageCircle className="size-4" />
-        </div>
-        <span className="flex-1 text-base font-semibold">Chat</span>
+        <Logo className="flex-1" markClassName="size-8" />
         <ThemeToggle />
         <DropdownMenu>
           <DropdownMenuTrigger asChild>

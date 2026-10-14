@@ -26,7 +26,7 @@ export function AppProviders({ children }: { children: ReactNode }) {
         attribute="class"
         defaultTheme="system"
         enableSystem
-        storageKey="chat-theme"
+        storageKey="ripple-theme"
         disableTransitionOnChange
       >
         <QueryClientProvider client={queryClient}>

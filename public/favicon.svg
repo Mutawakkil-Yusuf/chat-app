@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" role="img" aria-label="Ripple">
+  <defs>
+    <linearGradient id="ripple-g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#e8574a" />
+      <stop offset="1" stop-color="#c72f1e" />
+    </linearGradient>
+    <clipPath id="ripple-bubble">
+      <path d="M9 3.5H23A7.5 7.5 0 0 1 30.5 11v7A7.5 7.5 0 0 1 23 25.5h-6l-5.5 5.5v-5.5H9A7.5 7.5 0 0 1 1.5 18v-7A7.5 7.5 0 0 1 9 3.5Z" />
+    </clipPath>
+  </defs>
+  <g clip-path="url(#ripple-bubble)">
+    <path
+      d="M9 3.5H23A7.5 7.5 0 0 1 30.5 11v7A7.5 7.5 0 0 1 23 25.5h-6l-5.5 5.5v-5.5H9A7.5 7.5 0 0 1 1.5 18v-7A7.5 7.5 0 0 1 9 3.5Z"
+      fill="url(#ripple-g)"
+    />
+    <g fill="none" stroke="#ffffff" stroke-width="1.8">
+      <circle cx="16" cy="14.5" r="5.4" opacity="0.5" />
+      <circle cx="16" cy="14.5" r="9" opacity="0.26" />
+    </g>
+    <circle cx="16" cy="14.5" r="2.4" fill="#ffffff" />
+  </g>
+</svg>

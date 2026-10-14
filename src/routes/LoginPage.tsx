@@ -2,8 +2,8 @@ import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
-import { Mail, MessageCircle } from 'lucide-react'
-import { Navigate } from 'react-router-dom'
+import { Mail } from 'lucide-react'
+import { Navigate, Link } from 'react-router-dom'
 import { toast } from 'sonner'
 import { Button } from '@/components/ui/button'
 import {
@@ -16,6 +16,7 @@ import {
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { ThemeToggle } from '@/components/theme/ThemeToggle'
+import { LogoMark } from '@/components/brand/Logo'
 import { useAuth } from '@/providers/auth-context'
 
 const schema = z.object({
@@ -88,64 +89,72 @@ export function LoginPage() {
         <ThemeToggle />
       </div>
 
-      <Card className="w-full max-w-sm shadow-lg">
-        <CardHeader className="items-center text-center">
-          <div className="mb-2 flex size-12 items-center justify-center rounded-2xl bg-primary text-primary-foreground">
-            <MessageCircle className="size-6" />
-          </div>
-          <CardTitle className="text-2xl">Welcome back</CardTitle>
-          <CardDescription>Sign in to start chatting in realtime.</CardDescription>
-        </CardHeader>
+      <div className="w-full max-w-sm">
+        <Link
+          to="/"
+          aria-label="Ripple home"
+          className="mb-6 flex items-center justify-center gap-2 text-lg font-semibold tracking-tight"
+        >
+          <LogoMark className="size-8" decorative />
+          Ripple
+        </Link>
 
-        <CardContent className="space-y-5">
-          <Button
-            variant="outline"
-            className="w-full"
-            onClick={onGoogle}
-            disabled={googleLoading}
-          >
-            <GoogleIcon />
-            Continue with Google
-          </Button>
+        <Card className="w-full shadow-lg">
+          <CardHeader className="items-center text-center">
+            <CardTitle className="text-2xl">Welcome back</CardTitle>
+            <CardDescription>Sign in to keep the conversation flowing.</CardDescription>
+          </CardHeader>
 
-          <div className="flex items-center gap-3 text-xs text-muted-foreground">
-            <span className="h-px flex-1 bg-border" />
-            OR
-            <span className="h-px flex-1 bg-border" />
-          </div>
+          <CardContent className="space-y-5">
+            <Button
+              variant="outline"
+              className="w-full"
+              onClick={onGoogle}
+              disabled={googleLoading}
+            >
+              <GoogleIcon />
+              Continue with Google
+            </Button>
 
-          {linkSent ? (
-            <div className="rounded-lg border bg-muted/50 p-4 text-center text-sm">
-              <Mail className="mx-auto mb-2 size-5 text-muted-foreground" />
-              <p className="font-medium">Magic link sent</p>
-              <p className="text-muted-foreground">
-                Follow the link we emailed you to finish signing in.
-              </p>
+            <div className="flex items-center gap-3 text-xs text-muted-foreground">
+              <span className="h-px flex-1 bg-border" />
+              OR
+              <span className="h-px flex-1 bg-border" />
             </div>
-          ) : (
-            <form onSubmit={handleSubmit(onSubmit)} className="space-y-3" noValidate>
-              <div className="space-y-1.5">
-                <Label htmlFor="email">Email</Label>
-                <Input
-                  id="email"
-                  type="email"
-                  placeholder="you@example.com"
-                  autoComplete="email"
-                  aria-invalid={Boolean(errors.email)}
-                  {...register('email')}
-                />
-                {errors.email ? (
-                  <p className="text-xs text-destructive">{errors.email.message}</p>
-                ) : null}
+
+            {linkSent ? (
+              <div className="rounded-lg border bg-muted/50 p-4 text-center text-sm">
+                <Mail className="mx-auto mb-2 size-5 text-muted-foreground" />
+                <p className="font-medium">Magic link sent</p>
+                <p className="text-muted-foreground">
+                  Follow the link we emailed you to finish signing in.
+                </p>
               </div>
-              <Button type="submit" className="w-full" disabled={isSubmitting}>
-                <Mail />
-                Email me a sign-in link
-              </Button>
-            </form>
-          )}
-        </CardContent>
-      </Card>
+            ) : (
+              <form onSubmit={handleSubmit(onSubmit)} className="space-y-3" noValidate>
+                <div className="space-y-1.5">
+                  <Label htmlFor="email">Email</Label>
+                  <Input
+                    id="email"
+                    type="email"
+                    placeholder="you@example.com"
+                    autoComplete="email"
+                    aria-invalid={Boolean(errors.email)}
+                    {...register('email')}
+                  />
+                  {errors.email ? (
+                    <p className="text-xs text-destructive">{errors.email.message}</p>
+                  ) : null}
+                </div>
+                <Button type="submit" className="w-full" disabled={isSubmitting}>
+                  <Mail />
+                  Email me a sign-in link
+                </Button>
+              </form>
+            )}
+          </CardContent>
+        </Card>
+      </div>
     </div>
   )
 }

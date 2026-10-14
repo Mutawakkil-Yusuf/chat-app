@@ -70,7 +70,7 @@ export function MessageComposer({
   }
 
   return (
-    <div className="border-t bg-background p-3">
+    <div className="pb-safe border-t bg-background p-3">
       {editing ? (
         <div className="mb-2 flex items-center justify-between rounded-md bg-muted px-3 py-1.5 text-xs">
           <span className="flex items-center gap-1.5 text-muted-foreground">

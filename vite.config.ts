@@ -22,14 +22,8 @@ export default defineConfig({
           if (id.includes('react-hook-form') || id.includes('@hookform')) return 'form'
           if (id.includes('date-fns')) return 'date-fns'
           if (id.includes('zod')) return 'zod'
-          if (
-            id.includes('/react/') ||
-            id.includes('/react-dom/') ||
-            id.includes('react-router') ||
-            id.includes('/scheduler/')
-          ) {
-            return 'react'
-          }
+          // React, React DOM, React Router and their small runtime deps share the
+          // default vendor chunk so their cross-imports don't form a cycle.
           return 'vendor'
         },
       },
