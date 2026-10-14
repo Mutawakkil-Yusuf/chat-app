@@ -5,3 +5,6 @@ package-lock.json
 
 # Vendored shadcn/ui components — keep pristine for `shadcn add` diffs
 src/components/ui
+
+# Vendored shadcn Tailwind layer — keep in sync with upstream
+src/styles/shadcn.css
