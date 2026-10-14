@@ -50,11 +50,11 @@ With the Supabase CLI linked, you can alternatively run `supabase db push`.
 In Dashboard → Authentication:
 
 - **URL configuration**
-  - Site URL: your production URL (e.g. `https://your-app.vercel.app`).
-  - Redirect URLs: add `http://localhost:5173/**` and your production URL. The app
-    sends users to `/chats` after sign-in, so make sure the wildcard/pattern
-    covers it (e.g. `https://your-app.vercel.app/**`). The public routes `/`,
-    `/features`, and `/about` need no special configuration.
+  - Site URL: `https://ripple-chatz.vercel.app`.
+  - Redirect URLs: add `http://localhost:5173/**` and
+    `https://ripple-chatz.vercel.app/**`. The app sends users to `/chats` after
+    sign-in, so the wildcard must cover it. The public routes `/`, `/features`,
+    and `/about` need no special configuration.
 - **Email** — magic-link sign-in is enabled by default; no extra setup.
 - **Google** — enable the provider and paste a Google OAuth Client ID/Secret.
   See the Supabase Google login guide for the authorized redirect URI to add in
