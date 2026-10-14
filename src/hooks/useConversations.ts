@@ -62,7 +62,8 @@ export function useStartDirectConversation(userId: string | undefined) {
       return data as string
     },
     onSuccess: () => {
-      if (userId) queryClient.invalidateQueries({ queryKey: queryKeys.conversations(userId) })
+      if (userId)
+        queryClient.invalidateQueries({ queryKey: queryKeys.conversations(userId) })
     },
   })
 }
@@ -79,7 +80,8 @@ export function useCreateGroupConversation(userId: string | undefined) {
       return data as string
     },
     onSuccess: () => {
-      if (userId) queryClient.invalidateQueries({ queryKey: queryKeys.conversations(userId) })
+      if (userId)
+        queryClient.invalidateQueries({ queryKey: queryKeys.conversations(userId) })
     },
   })
 }
@@ -97,7 +99,8 @@ export function useMarkConversationRead(userId: string | undefined) {
       if (error) throw error
     },
     onSuccess: () => {
-      if (userId) queryClient.invalidateQueries({ queryKey: queryKeys.conversations(userId) })
+      if (userId)
+        queryClient.invalidateQueries({ queryKey: queryKeys.conversations(userId) })
     },
   })
 }

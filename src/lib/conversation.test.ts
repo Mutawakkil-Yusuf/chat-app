@@ -1,5 +1,9 @@
 import { describe, expect, it } from 'vitest'
-import { conversationPresenceId, conversationSubtitle, conversationTitle } from './conversation'
+import {
+  conversationPresenceId,
+  conversationSubtitle,
+  conversationTitle,
+} from './conversation'
 import type { ConversationOverview } from '@/types/models'
 
 function makeConversation(

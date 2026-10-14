@@ -86,7 +86,9 @@ export function MessageComposer({
         <div className="mb-2 flex items-center justify-between rounded-md border-l-2 border-primary bg-muted px-3 py-1.5 text-xs">
           <span className="min-w-0">
             <span className="font-medium">{replySenderName ?? 'Replying'}</span>
-            <span className="ml-1.5 truncate text-muted-foreground">{replyingTo.body}</span>
+            <span className="ml-1.5 truncate text-muted-foreground">
+              {replyingTo.body}
+            </span>
           </span>
           <button type="button" onClick={onCancelReply} aria-label="Cancel reply">
             <X className="size-3.5" />

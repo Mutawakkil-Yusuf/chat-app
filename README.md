@@ -68,6 +68,8 @@ Supabase SQL editor (or the Supabase CLI):
 - `supabase/migrations/20260101000000_init.sql` — tables, row level security,
   triggers, and helper functions
 - `supabase/migrations/20260101000001_realtime.sql` — Realtime publication
+- `supabase/migrations/20260101000002_hardening.sql` — owner-only membership and
+  conversation updates, retry-safe profile bootstrap
 
 ### 5. Enable auth providers
 
@@ -76,6 +78,11 @@ In `Authentication → Providers`:
 - **Email** — enable magic links (default).
 - **Google** — enable and supply a Client ID / Secret. Add your site URL and
   `http://localhost:5173` to the allowed redirect URLs.
+
+> **Email confirmation.** By default Supabase requires users to confirm their
+> email before a magic link signs them in. For quick local testing you can turn
+> this off under `Authentication → Sign In / Providers → Email → Confirm email`.
+> Leave it enabled in production.
 
 ### 6. Run
 

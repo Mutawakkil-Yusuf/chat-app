@@ -34,7 +34,9 @@ export function ChatHeader({
   const isGroup = conversation.kind === 'group'
   const title = conversationTitle(conversation)
   const otherId = conversation.other_user_id
-  const otherOnline = otherId ? onlineUserIds.has(otherId) : onlineUserIds.has(conversationPresenceId(conversation))
+  const otherOnline = otherId
+    ? onlineUserIds.has(otherId)
+    : onlineUserIds.has(conversationPresenceId(conversation))
 
   const subtitle = (() => {
     if (typingUsers.length > 0) {

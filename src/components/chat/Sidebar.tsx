@@ -1,5 +1,12 @@
 import { useState } from 'react'
-import { Loader2, LogOut, MessageCircle, Search, SquarePen, UserRound } from 'lucide-react'
+import {
+  Loader2,
+  LogOut,
+  MessageCircle,
+  Search,
+  SquarePen,
+  UserRound,
+} from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import {
   DropdownMenu,
@@ -68,7 +75,9 @@ export function Sidebar({
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end" className="w-52">
             <DropdownMenuLabel>
-              <p className="truncate text-sm font-medium">{profile?.display_name ?? 'You'}</p>
+              <p className="truncate text-sm font-medium">
+                {profile?.display_name ?? 'You'}
+              </p>
               <p className="truncate text-xs font-normal text-muted-foreground">
                 @{profile?.username ?? '—'}
               </p>
@@ -98,7 +107,11 @@ export function Sidebar({
           ) : null}
         </div>
 
-        <Button variant="outline" className="w-full justify-start" onClick={onNewConversation}>
+        <Button
+          variant="outline"
+          className="w-full justify-start"
+          onClick={onNewConversation}
+        >
           <SquarePen /> New conversation
         </Button>
       </div>
@@ -142,8 +155,8 @@ export function Sidebar({
       </ScrollArea>
 
       <div className="border-t px-3 py-2 text-[10px] text-muted-foreground">
-        {conversations.length} conversation{conversations.length === 1 ? '' : 's'} · Realtime
-        enabled
+        {conversations.length} conversation{conversations.length === 1 ? '' : 's'} ·
+        Realtime enabled
       </div>
     </div>
   )

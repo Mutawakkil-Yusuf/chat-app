@@ -25,7 +25,10 @@ export function UserAvatar({
   const dotSize = Math.max(10, Math.round(size * 0.3))
 
   return (
-    <div className={cn('relative shrink-0', className)} style={{ width: size, height: size }}>
+    <div
+      className={cn('relative shrink-0', className)}
+      style={{ width: size, height: size }}
+    >
       <Avatar className="size-full">
         {avatarUrl ? <AvatarImage src={avatarUrl} alt={name ?? 'User avatar'} /> : null}
         <AvatarFallback

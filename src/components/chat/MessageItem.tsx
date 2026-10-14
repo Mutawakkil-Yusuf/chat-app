@@ -81,7 +81,9 @@ export function MessageItem({
         ) : null}
       </div>
 
-      <div className={cn('flex max-w-[75%] flex-col', isOwn ? 'items-end' : 'items-start')}>
+      <div
+        className={cn('flex max-w-[75%] flex-col', isOwn ? 'items-end' : 'items-start')}
+      >
         {showHeader ? (
           <div
             className={cn(
@@ -92,7 +94,9 @@ export function MessageItem({
             <span className="font-medium text-foreground">
               {isOwn ? 'You' : senderName}
             </span>
-            <span className="text-muted-foreground">{formatMessageTime(message.created_at)}</span>
+            <span className="text-muted-foreground">
+              {formatMessageTime(message.created_at)}
+            </span>
           </div>
         ) : null}
 
@@ -119,7 +123,9 @@ export function MessageItem({
           >
             {message.body}
             {message.edited_at ? (
-              <span className="ml-1.5 align-baseline text-[10px] opacity-60">(edited)</span>
+              <span className="ml-1.5 align-baseline text-[10px] opacity-60">
+                (edited)
+              </span>
             ) : null}
           </div>
 
@@ -161,7 +167,10 @@ export function MessageItem({
                   <DropdownMenuItem onClick={() => onEdit(message)}>
                     <Pencil className="size-4" /> Edit
                   </DropdownMenuItem>
-                  <DropdownMenuItem variant="destructive" onClick={() => onDelete(message)}>
+                  <DropdownMenuItem
+                    variant="destructive"
+                    onClick={() => onDelete(message)}
+                  >
                     <Trash2 className="size-4" /> Delete
                   </DropdownMenuItem>
                 </DropdownMenuContent>

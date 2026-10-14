@@ -89,7 +89,7 @@ export function NewConversationDialog({
   }
 
   return (
-      <Dialog open={open} onOpenChange={handleOpenChange}>
+    <Dialog open={open} onOpenChange={handleOpenChange}>
       <DialogContent className="sm:max-w-md">
         <DialogHeader>
           <DialogTitle>New conversation</DialogTitle>
@@ -222,7 +222,9 @@ function UserResults({
               />
               <div className="min-w-0 flex-1">
                 <p className="truncate text-sm font-medium">{profile.display_name}</p>
-                <p className="truncate text-xs text-muted-foreground">@{profile.username}</p>
+                <p className="truncate text-xs text-muted-foreground">
+                  @{profile.username}
+                </p>
               </div>
               {isSelected ? <Check className="size-4 text-primary" /> : null}
             </button>

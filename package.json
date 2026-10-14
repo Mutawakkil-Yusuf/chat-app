@@ -14,7 +14,7 @@
     "typecheck": "tsc -b --noEmit",
     "test": "vitest run",
     "test:watch": "vitest",
-    "db:types": "supabase gen types typescript --local > src/types/database.ts"
+    "db:types": "supabase gen types typescript --project-id ycubxxzlzglntwiqhlcl > src/types/database.ts"
   },
   "dependencies": {
     "@fontsource-variable/geist": "^5.3.0",

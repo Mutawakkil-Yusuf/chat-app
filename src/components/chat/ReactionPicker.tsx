@@ -9,7 +9,11 @@ type ReactionPickerProps = {
   align?: 'start' | 'center' | 'end'
 }
 
-export function ReactionPicker({ onPick, children, align = 'center' }: ReactionPickerProps) {
+export function ReactionPicker({
+  onPick,
+  children,
+  align = 'center',
+}: ReactionPickerProps) {
   return (
     <Popover>
       <PopoverTrigger asChild>{children}</PopoverTrigger>

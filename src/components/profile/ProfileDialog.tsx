@@ -41,7 +41,12 @@ type ProfileDialogProps = {
   profile: Profile
 }
 
-export function ProfileDialog({ open, onOpenChange, userId, profile }: ProfileDialogProps) {
+export function ProfileDialog({
+  open,
+  onOpenChange,
+  userId,
+  profile,
+}: ProfileDialogProps) {
   const updateProfile = useUpdateProfile(userId)
   const {
     register,
@@ -108,7 +113,11 @@ export function ProfileDialog({ open, onOpenChange, userId, profile }: ProfileDi
 
           <div className="space-y-1.5">
             <Label htmlFor="profile-name">Display name</Label>
-            <Input id="profile-name" {...register('display_name')} aria-invalid={!!errors.display_name} />
+            <Input
+              id="profile-name"
+              {...register('display_name')}
+              aria-invalid={!!errors.display_name}
+            />
             {errors.display_name ? (
               <p className="text-xs text-destructive">{errors.display_name.message}</p>
             ) : null}
@@ -116,7 +125,11 @@ export function ProfileDialog({ open, onOpenChange, userId, profile }: ProfileDi
 
           <div className="space-y-1.5">
             <Label htmlFor="profile-username">Username</Label>
-            <Input id="profile-username" {...register('username')} aria-invalid={!!errors.username} />
+            <Input
+              id="profile-username"
+              {...register('username')}
+              aria-invalid={!!errors.username}
+            />
             {errors.username ? (
               <p className="text-xs text-destructive">{errors.username.message}</p>
             ) : null}

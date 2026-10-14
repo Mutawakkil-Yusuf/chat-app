@@ -39,6 +39,9 @@ using the **SQL editor** (Dashboard → SQL Editor) or the Supabase CLI:
      `create_group_conversation`).
 2. `supabase/migrations/20260101000001_realtime.sql`
    - Adds the tables to the `supabase_realtime` publication.
+3. `supabase/migrations/20260101000002_hardening.sql`
+   - Restricts membership changes and conversation updates to owners, and makes
+     profile creation retry-safe against username collisions.
 
 With the Supabase CLI linked, you can alternatively run `supabase db push`.
 

@@ -2,3 +2,6 @@ dist
 coverage
 node_modules
 package-lock.json
+
+# Vendored shadcn/ui components — keep pristine for `shadcn add` diffs
+src/components/ui

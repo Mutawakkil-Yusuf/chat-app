@@ -1,8 +1,4 @@
-import {
-  useInfiniteQuery,
-  useMutation,
-  useQueryClient,
-} from '@tanstack/react-query'
+import { useInfiniteQuery, useMutation, useQueryClient } from '@tanstack/react-query'
 import { useEffect } from 'react'
 import { supabase } from '@/lib/supabase'
 import { queryKeys } from '@/lib/query-keys'
@@ -39,7 +35,9 @@ export function useMessages(conversationId: string | null) {
       return data ?? []
     },
     getNextPageParam: (lastPage) =>
-      lastPage.length === PAGE_SIZE ? lastPage[lastPage.length - 1].created_at : undefined,
+      lastPage.length === PAGE_SIZE
+        ? lastPage[lastPage.length - 1].created_at
+        : undefined,
   })
 
   useEffect(() => {
@@ -137,12 +135,7 @@ export function useEditMessage(userId: string | undefined) {
 export function useDeleteMessage(userId: string | undefined) {
   const queryClient = useQueryClient()
   return useMutation({
-    mutationFn: async ({
-      messageId,
-    }: {
-      messageId: string
-      conversationId: string
-    }) => {
+    mutationFn: async ({ messageId }: { messageId: string; conversationId: string }) => {
       const { error } = await supabase.from('messages').delete().eq('id', messageId)
       if (error) throw error
     },

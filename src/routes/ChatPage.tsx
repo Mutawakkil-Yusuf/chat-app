@@ -64,7 +64,9 @@ export function ChatPage() {
         />
       </aside>
 
-      <main className={cn('min-w-0 flex-1 flex-col', selected ? 'flex' : 'hidden md:flex')}>
+      <main
+        className={cn('min-w-0 flex-1 flex-col', selected ? 'flex' : 'hidden md:flex')}
+      >
         {selected ? (
           <ChatWindow
             key={selected.id}

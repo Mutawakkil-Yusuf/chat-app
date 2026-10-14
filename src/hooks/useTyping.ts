@@ -10,7 +10,10 @@ const TYPING_TIMEOUT_MS = 4000
 /**
  * Ephemeral typing indicators over Realtime broadcast (never persisted).
  */
-export function useTyping(conversationId: string | null, currentUserId: string | undefined) {
+export function useTyping(
+  conversationId: string | null,
+  currentUserId: string | undefined,
+) {
   const [typingUsers, setTypingUsers] = useState<Map<string, TypingEntry>>(new Map())
   const channelRef = useRef<RealtimeChannel | null>(null)
   const timeoutsRef = useRef<Map<string, number>>(new Map())
@@ -72,7 +75,10 @@ export function useTyping(conversationId: string | null, currentUserId: string |
       void channelRef.current?.send({
         type: 'broadcast',
         event: 'typing',
-        payload: { user_id: currentUserId, display_name: displayName } satisfies TypingPayload,
+        payload: {
+          user_id: currentUserId,
+          display_name: displayName,
+        } satisfies TypingPayload,
       })
     },
     [currentUserId],
