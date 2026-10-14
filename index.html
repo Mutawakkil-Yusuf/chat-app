@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0a0a0a" />
+    <meta
+      name="description"
+      content="A modern realtime chat app built with React, Supabase and Tailwind CSS."
+    />
+    <title>Chat</title>
+    <script>
+      // Apply persisted theme before first paint to avoid a flash.
+      ;(function () {
+        try {
+          var stored = localStorage.getItem('chat-theme')
+          var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+          var dark = stored ? stored === 'dark' : prefersDark
+          document.documentElement.classList.toggle('dark', dark)
+        } catch (e) {}
+      })()
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
